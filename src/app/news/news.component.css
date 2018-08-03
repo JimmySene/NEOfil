@@ -1,14 +1,21 @@
-table {
+#news_table {
+  width : 80%;
+  min-width : 500px;
   border-collapse: collapse;
   border : solid 1px black;
   font-weight : bold;
 }
 
-td{
+#news_table td{
   padding : 20px;
 }
 
-tr:nth-child(even)
+#news_table tr:nth-child(even)
 {
   background-color : #CCC;
+}
+
+.important
+{
+  color : red;
 }

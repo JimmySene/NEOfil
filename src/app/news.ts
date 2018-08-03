@@ -1,9 +1,10 @@
 export class News {
 
-  id: number,
-  date_public: string,
-  titre_appercu: string,
-  titre: string,
-  contenu: string
-  
+  id: number;
+  public_date: string;
+  title_preview: string;
+  text_link: string;
+  title: string;
+  content: string;
+
 }

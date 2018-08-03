@@ -12,8 +12,3 @@ tr:nth-child(even)
 {
   background-color : #CCC;
 }
-
-a{
-  text-decoration : none;
-  color : inherit;
-}

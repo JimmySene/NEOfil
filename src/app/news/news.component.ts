@@ -11,34 +11,39 @@ export class NewsComponent implements OnInit {
     news: News[] = [
     {
       id: 1,
-      date_public: "01-08-2018",
-      titre_appercu: "Economisez votre batterie de tablette",
-      titre: "Economisez votre batterie de tablette",
-      contenu: "lorem ipsum"
+      public_date: "01-08-2018",
+      title_preview: "Economisez votre batterie de tablette",
+      text_link: "par ici",
+      title: "Economisez votre batterie de tablette",
+      content: "lorem ipsum"
     },
     {
       id: 2,
-      date_public: "02-08-2018",
-      titre_appercu: "Une nouvelle version du service identité",
-      titre: "Une nouvelle version du service identité",
-      contenu: "lorem ipsum"
+      public_date: "02-08-2018",
+      title_preview: "Une nouvelle version du service identité",
+      text_link: "la nouveauté de la version",
+      title: "Une nouvelle version du service identité",
+      content: "lorem ipsum"
     },
     {
       id: 3,
-      date_public: "02-08-2018",
-      titre_appercu: "Nouvelle application nommée \"XXX\"",
-      titre: "Nouvelle application nommée \"XXX\"",
-      contenu: "lorem ipsum"
+      public_date: "02-08-2018",
+      title_preview: "Nouvelle application nommée \"XXX\"",
+      text_link: "en savoir plus",
+      title: "Nouvelle application nommée \"XXX\"",
+      content: "lorem ipsum"
     },
   ];
 
-  selectedNews: News;
+  selected_news: News;
 
-  select_news(the_news: News) : void {
-    this.selectedNews = the_news;
+  // Select the focused news
+  select_news(the_news: News): void {
+    this.selected_news = the_news;
   }
 
-  delete_news(index:number) : void {
+  // Delete the focused news in the display
+  delete_news(index:number): void {
     this.news.splice(index,1);
   }
 

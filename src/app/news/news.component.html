@@ -2,10 +2,10 @@
   <!-- LU/NON LU - [DATE] - TITRE APPERCU - SUP -->
   <tr *ngFor="let news of news; index as i">
     <td>{{ news.id }}</td>
-    <td>[{{ news.date_public }}]</td>
-    <td (click)="select_news(news)"><a href="#">{{ news.titre_appercu}}</a></td>
+    <td>[{{ news.public_date }}]</td>
+    <td>{{ news.title_preview}} <span *ngIf="news.text_link"><a href="#" (click)="select_news(news)">{{ news.text_link }}</a></span></td>
     <td (click)="delete_news(i)"><a href="#">Sup</a></td>
   </tr>
 </table>
 
-<app-news-content [the_news]="selectedNews"></app-news-content>
+<app-news-content [the_news]="selected_news"></app-news-content>

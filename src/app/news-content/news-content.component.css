@@ -1,4 +1,19 @@
 h2 {
   background-color : #CCC;
   padding : 20px;
+  font-size : 18px;
+  text-align : center;
+}
+
+#content_news
+{
+  width : 80%;
+  margin : auto;
+  border : solid black 1px;
+}
+
+#content
+{
+  padding : 10px;
+  padding-top : 0;
 }

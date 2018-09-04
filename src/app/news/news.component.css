@@ -1,9 +1,11 @@
 #news_table {
   width : 80%;
+  margin : auto;
   min-width : 500px;
   border-collapse: collapse;
   border : solid 1px black;
   font-weight : bold;
+  box-shadow : black 2px 2px 5px;
 }
 
 #news_table td{
@@ -12,10 +14,15 @@
 
 #news_table tr:nth-child(even)
 {
-  background-color : #CCC;
+  background-color : #DDD;
 }
 
 .important
 {
   color : red;
+}
+
+.vu
+{
+  font-weight : normal;
 }

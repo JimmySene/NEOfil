@@ -1,8 +1,10 @@
 h2 {
-  background-color : #CCC;
+  background-color : #DDDDDD;
   padding : 20px;
+  margin-top : 0;
   font-size : 18px;
   text-align : center;
+  text-transform : uppercase;
 }
 
 #content_news
@@ -10,6 +12,24 @@ h2 {
   width : 80%;
   margin : auto;
   border : solid black 1px;
+}
+
+#retour_actualites
+{
+
+}
+#retour_actualites
+{
+  text-decoration : none;
+  color : inherit;
+}
+
+.retour_aux_actualites
+{
+  position : relative;
+  left : 10px;
+  bottom : 25px;
+  font-weight : bold;
 }
 
 #content

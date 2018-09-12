@@ -2,6 +2,9 @@
   <h2>[{{the_news.public_date | date:"dd-MM-yy"}}] {{the_news.title}}</h2>
   <div id="content">
     <p>{{the_news.content}}</p>
-    <a routerLink="/news">Retour aux actualités</a><a href="#">SUP</a>
+    <p>
+      <a id="retour_actualites" routerLink="/news"><img src="assets/images/retour.png" alt="retour aux news" /><span class="retour_aux_actualites">Retour aux actualités</span></a>
+    
+    </p>
   </div>
 </div>

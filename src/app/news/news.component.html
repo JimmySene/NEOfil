@@ -1,11 +1,14 @@
 <table id="news_table">
   <!-- LU/NON LU - [DATE] - TITRE APPERCU - SUP -->
-  <tr *ngFor="let news of news; index as i" [class.vu] = "view_verif(news.id)">
+  <tr *ngFor="let news of news.slice().reverse(); index as i" [class.vu] = "view_verif(news.id)">
 
-    <td><img *ngIf="!view_verif(news.id)" src="assets/images/message.png" alt="nouveau message" width="32" height="32"/></td>
-    <td>[{{ news.public_date | date:"dd-MM-yy"}}]</td>
-    <td [class.important] = "news.important">{{ news.title_preview}} <span *ngIf="news.text_link"><a routerLink="/news-content/{{news.id}}">{{ news.text_link }}</a></span></td>
-    <td (click)="delete_news(i)"><a routerLink="/news"><img src="assets/images/bin.png" alt="supprimer"  /></a></td>
+    <td>
+      <img *ngIf="!view_verif(news.id)" src="assets/images/message.png" alt="nouveau message" width="32" height="32"/>
+      <img *ngIf="view_verif(news.id)" src="assets/images/message-lu.png" alt="nouveau message" width="32" height="32"/>
+    </td>
+    <td>{{ news.public_date | date:"dd-MM-yy"}}</td>
+    <td  routerLink="/news-content/{{news.id}}" class="title_preview" [class.important] = "news.important">{{ news.title_preview}}</td>
+    <td><a routerLink="/news"><img src="assets/images/favori-vide.png" alt="favori"  /></a></td>
 
   </tr>
 </table>

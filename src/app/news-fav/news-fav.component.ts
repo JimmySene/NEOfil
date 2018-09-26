@@ -3,15 +3,11 @@ import { News } from '../news';
 import { NewsService } from '../news.service';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  selector: 'app-news-fav',
+  templateUrl: './news-fav.component.html',
+  styleUrls: ['./news-fav.component.css']
 })
-export class NewsComponent implements OnInit {
-
-
-  news: News[];
-
+export class NewsFavComponent implements OnInit {
 
   // Delete the focused news in the display
   delete_news(index:number): void {
@@ -21,14 +17,13 @@ export class NewsComponent implements OnInit {
   // Put the state read on the news ID
   view_message(id:number)
   {
-    if(localStorage.getItem(id.toString()))
-    {
-        localStorage.removeItem(id.toString());
-    }
-    else
-    {
-        localStorage.setItem(id.toString(), 'true');
-    }
+    localStorage.setItem(id.toString(), 'true');
+  }
+
+  // Delete the state read on the news ID
+  unview_message(id:number)
+  {
+    localStorage.removeItem(id.toString());
   }
 
   // Verification view news (local storage with ID news = viewed)
@@ -43,7 +38,6 @@ export class NewsComponent implements OnInit {
     }
   }
 
-/*
   del_verif(index:number): boolean {
     if(localStorage.getItem(index.toString()) !== null)
     {
@@ -53,9 +47,8 @@ export class NewsComponent implements OnInit {
     {
       return false;
     }
-  }*/
+  }
 
-  // Verification bookmark news (local storage with ID news = bookmark)
   fav_verif(index:number): boolean {
     if(localStorage.getItem("fav_" + index.toString()) !== null)
     {
@@ -67,7 +60,6 @@ export class NewsComponent implements OnInit {
     }
   }
 
-  // Put a bookmark on news ID or delete it
   bookmark(id:number)
   {
     if(localStorage.getItem("fav_" + id.toString()))
@@ -79,11 +71,12 @@ export class NewsComponent implements OnInit {
         localStorage.setItem("fav_" + id.toString(), 'true');
     }
   }
+
   constructor(private newsService:NewsService) { }
 
   // Put news in the array news
   getNews(): void {
-    this.news = this.newsService.getNews();
+    this.news = this.newsService.getFavs();
   }
 
 
@@ -94,6 +87,6 @@ export class NewsComponent implements OnInit {
       //localStorage.clear();
   }
 
-
+  news:News[];
 
 }

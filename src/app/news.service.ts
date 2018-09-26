@@ -36,8 +36,21 @@ export class NewsService {
     }
   ];
 
+
+  // Return all news
   getNews(): News[] {
     return this.news;
+  }
+
+  // Return bookmarks
+  getFavs() :News[] {
+    let fav: News[] = [];
+    this.news.forEach(function(value){
+      if(localStorage.getItem("fav_" + value.id.toString()) !== null)
+        fav.push(value);
+    });
+
+    return fav;
   }
 
 }

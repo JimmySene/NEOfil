@@ -1,14 +1,17 @@
+<p class="link_bookmarks"><a routerLink="/news-fav">accéder à vos favoris</a></p>
 <table id="news_table">
-  <!-- LU/NON LU - [DATE] - TITRE APPERCU - SUP -->
+  <!-- LU/NON LU - [DATE] - TITRE APPERCU - FAVORI -->
   <tr *ngFor="let news of news.slice().reverse(); index as i" [class.vu] = "view_verif(news.id)">
-
-    <td>
-      <img *ngIf="!view_verif(news.id)" src="assets/images/message.png" alt="nouveau message" width="32" height="32"/>
-      <img *ngIf="view_verif(news.id)" src="assets/images/message-lu.png" alt="nouveau message" width="32" height="32"/>
+    <td (click)="view_message(news.id)">
+      <img *ngIf="!view_verif(news.id)"  src="assets/images/message.png" alt="nouveau message" width="32" height="32"/>
+      <img *ngIf="view_verif(news.id)"  src="assets/images/message-lu.png" alt="nouveau message" width="32" height="32"/>
     </td>
     <td>{{ news.public_date | date:"dd-MM-yy"}}</td>
-    <td  routerLink="/news-content/{{news.id}}" class="title_preview" [class.important] = "news.important">{{ news.title_preview}}</td>
-    <td><a routerLink="/news"><img src="assets/images/favori-vide.png" alt="favori"  /></a></td>
+    <td routerLink="/news-content/{{news.id}}" class="title_preview" [class.important] = "news.important">{{ news.title_preview}}</td>
+    <td (click)="bookmark(news.id)">
+      <img *ngIf="fav_verif(news.id)"  src="assets/images/favori-rempli.png" alt="favori"  />
+      <img *ngIf="!fav_verif(news.id)" src="assets/images/favori-vide.png" alt="favori"  />
+    </td>
 
   </tr>
 </table>

@@ -9,8 +9,7 @@ a{
   margin-top : 30px;
   border-collapse: collapse;
   font-weight : bold;
-  border : black solid 1px;
-  box-shadow : black 2px 2px 5px;
+  box-shadow : 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 #news_table td{
@@ -19,7 +18,7 @@ a{
 
 #news_table tr:nth-child(even)
 {
-  background-color : #DDD;
+  background-color : #EEEEEE;
 }
 
 #news_table a
@@ -55,6 +54,10 @@ a{
   font-variant : small-caps;
 }
 
+.pagination{
+  text-align:center;
+}
+
 @media screen and (max-width: 640px)
 {
   tr{
@@ -73,6 +76,6 @@ a{
   tr td:nth-child(4) { flex:2; order : 4;}
 
   td{
-    font-size : 15px;
+    font-size : 16px;
   }
 }

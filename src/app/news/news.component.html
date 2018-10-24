@@ -1,5 +1,5 @@
 <p class="link_bookmarks"><a routerLink="/news-fav">accéder à vos favoris</a></p>
-<p style="text-align:right;width:88%;font-style:italic">Total : {{ news.length }} news</p>
+<p style="text-align:right;width:88%;font-style:italic">Total : {{ news.length }} actus</p>
 <table id="news_table">
   <!-- LU/NON LU - [DATE] - TITRE APPERCU - FAVORI -->
   <tr *ngFor="let news of news.slice().reverse()| paginate: {itemsPerPage:8, currentPage: p}; index as i" [class.vu] = "view_verif(news.id)">

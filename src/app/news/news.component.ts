@@ -81,10 +81,17 @@ export class NewsComponent implements OnInit {
   }
   constructor(private newsService:NewsService) { }
 
+  /*reload(): void {
+    this.newsService.initNews();
+    this.news = this.newsService.getNews();
+
+  }*/
   // Put news in the array news
   getNews(): void {
     this.news = this.newsService.getNews();
   }
+
+  p :number;
 
 
   ngOnInit() {

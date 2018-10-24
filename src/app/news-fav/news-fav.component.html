@@ -1,5 +1,5 @@
 <p class="link_inbox"><a routerLink="/news">retour aux news</a></p>
-<p style="text-align:right;width:88%;font-style:italic">Total : {{ news.length }} favoris</p>
+<p style="text-align:right;width:88%;font-style:italic">Total : {{ news.length }} favori<span *ngIf="news.length > 1">s</span></p>
 <table id="news_table">
   <!-- LU/NON LU - [DATE] - TITRE APPERCU - FAVORI -->
   <tr *ngFor="let news of news.slice().reverse()| paginate: {itemsPerPage:8, currentPage: p}; index as i" [class.vu] = "view_verif(news.id)">

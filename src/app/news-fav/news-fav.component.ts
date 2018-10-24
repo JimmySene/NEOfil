@@ -72,6 +72,8 @@ export class NewsFavComponent implements OnInit {
     }
   }
 
+  p :number;
+  
   constructor(private newsService:NewsService) { }
 
   // Put news in the array news

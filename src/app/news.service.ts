@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { News } from './news';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +9,19 @@ import { News } from './news';
 
 export class NewsService {
 
-  constructor() { }
+  constructor(private http:HttpClient) {
+    this.initNews();
+  }
 
+
+  news: News[] = [];
+
+
+/*
   news: News[] = [
     {
       id: 1,
-      public_date: new Date(2018,7,1),
+      public_date: new Date(),
       title_preview: "Economisez votre batterie de tablette ou de smartphone : suivez nos conseils ",
       title: "Economisez votre batterie de tablette",
       content: "Faire les mises à jour système dès que demandées Faire les mises à jour applicatives (store) dès que demandées Désactiver le BLUETOOTH  Désactiver le WIFI  Dans les paramètres WIFI avancés, désactiver aussi le ",
@@ -106,11 +115,23 @@ export class NewsService {
       content: "lorem ipsum",
       important: false
     }
-  ];
+  ]; */
 
-
+  // Init news with webservice
+  initNews() {
+    this.http
+    .get<any>('http://plf.poc.plf-sso.ppol.minint.fr/news')
+    .subscribe(
+      (value) => {
+         this.news = value;
+      },
+    (error) => {
+      console.log('erreur');
+    });
+  }
   // Return all news
   getNews(): News[] {
+
     return this.news;
   }
 

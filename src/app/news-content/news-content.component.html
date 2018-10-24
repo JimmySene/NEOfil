@@ -3,7 +3,7 @@
 </p>
 <div id="content_news" *ngIf="the_news">
   <h2>[{{the_news.public_date | date:"dd/MM/yy"}}] {{the_news.title}}</h2>
-  <div id="content">
-    <p>{{the_news.content}}</p>
+  <div id="content" innerHtml="{{the_news.content}}">
+
   </div>
 </div>

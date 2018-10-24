@@ -7,6 +7,7 @@ import { NewsComponent } from './news/news.component';
 import { NewsContentComponent } from './news-content/news-content.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NewsFavComponent } from './news-fav/news-fav.component';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewsFavComponent } from './news-fav/news-fav.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

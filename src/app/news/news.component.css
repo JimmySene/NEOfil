@@ -45,6 +45,8 @@ a{
   display : block;
   width : 200px;
   margin : auto;
+  margin-top : 15px;
+  margin-bottom : 25px;
   background-color : #006DF0;
   color : white;
   padding : 10px;
@@ -56,6 +58,8 @@ a{
 
 .pagination{
   text-align:center;
+  position:relative;
+  right:25px;
 }
 
 @media screen and (max-width: 640px)
@@ -75,7 +79,8 @@ a{
   tr td:nth-child(3) { order : 1;}
   tr td:nth-child(4) { flex:2; order : 4;}
 
-  td{
+  #news_table td{
     font-size : 16px;
+    padding : 10px;
   }
 }

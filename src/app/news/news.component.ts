@@ -9,8 +9,18 @@ import { NewsService } from '../news.service';
 })
 export class NewsComponent implements OnInit {
 
+  constructor(private newsService:NewsService) { }
 
   news: News[];
+  p :number;
+
+
+  ngOnInit() {
+
+    this.getNews();
+
+      //localStorage.clear();
+  }
 
 
   // Delete the focused news in the display
@@ -79,7 +89,6 @@ export class NewsComponent implements OnInit {
         localStorage.setItem("fav_" + id.toString(), 'true');
     }
   }
-  constructor(private newsService:NewsService) { }
 
   /*reload(): void {
     this.newsService.initNews();
@@ -89,16 +98,6 @@ export class NewsComponent implements OnInit {
   // Put news in the array news
   getNews(): void {
     this.news = this.newsService.getNews();
-  }
-
-  p :number;
-
-
-  ngOnInit() {
-
-    this.getNews();
-
-      //localStorage.clear();
   }
 
 
